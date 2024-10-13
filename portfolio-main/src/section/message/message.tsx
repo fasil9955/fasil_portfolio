@@ -27,6 +27,7 @@ const message = () => {
     emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, USER_ID)
       .then((response) => {
         console.log('Email sent successfully!', response.status, response.text);
+        alert('Email sent successfully!')
         setIsSending(false);
         setIsSuccess(true);
         setName("");
@@ -36,6 +37,7 @@ const message = () => {
       })
       .catch((err) => {
         console.error('Failed to send email. Error:', err);
+        alert('Failed to send email. Error:')
         setIsSending(false);
       });
   };
